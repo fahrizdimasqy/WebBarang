@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <Resource id="jdbc/web-barang" type="javax.sql.DataSource">#Tue Jun 29 21:11:44 ICT 2021
+jdbcDriver=com.mysql.jdbc.Driver
+password=
+userName=root
+jdbcUrl=jdbc\:mysql\://localhost\:3306/web_barang_uas
+</Resource>
+</resources>

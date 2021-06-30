@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </link>
+    <h:head>
+        <title>Daftar Barang</title>
+    </h:head>
+    <h:body>
+        <div class="container mt-4">
+              <f:view>
+            <h:form>
+                <h1><h:outputText value="List"/></h1>
+                <h:commandButton value="Tambah Barang" class="btn btn-primary" action="#{barangController.prepareCreate()}" />
+                <h:dataTable value="#{barangController.daftarBarang}" var="item" class="table">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Id"/>
+                        </f:facet>
+                        <h:outputText value="#{item.id}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nama"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nama}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Kategori"/>
+                        </f:facet>
+                        <h:outputText value="#{item.kategori}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Harga"/>
+                        </f:facet>
+                        <h:outputText value="#{item.harga}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Stok"/>
+                        </f:facet>
+                        <h:outputText value="#{item.stok}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Aksi"/>
+                        </f:facet>
+                        <h:commandButton value="Edit Barang" class="btn btn-warning me-3 text-white" action="#{barangController.prepareedit(item.id)}" />
+                        <h:commandButton value="Hapus Barang" class="btn btn-danger" action="#{barangController.delete(item.id)}" onclick="return confirm('Anda yakin ingin menghapus?')" />
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </f:view>
+        </div>
+    </h:body>
+</html>
+
